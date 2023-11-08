@@ -1,0 +1,87 @@
+---
+const saludo = "Proyecto de astroooo!!";
+const subMenu = ["Inicio", "Productos", "Servicios", "Nosotros", "Contacto"];
+---
+
+<header>
+	<div class="nombrePagina"><p>Nombre de la web</p></div>
+	<div class="subMenu">
+		<ul>
+		{subMenu.map(menus => <a href="#"><li>{menus}</li></a>)}
+		</ul>
+	</div>
+</header>
+
+<main>
+	<h1>{saludo}</h1>
+	<h2>Titulo 1</h2>
+	<h3>Titulo 2</h3>
+	<section>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit obcaecati libero, ducimus eaque consectetur quaerat quis corporis perspiciatis, hic eligendi quisquam vel a nobis sed architecto eos praesentium voluptatum consequatur atque distinctio! Ipsum quidem amet error praesentium at corrupti ut, ratione eveniet adipisci possimus sequi soluta vitae, quia ullam nulla!</section>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, labore rerum explicabo distinctio ipsa libero minus cumque animi voluptates quae et nihil officiis.</p>
+</main>
+
+
+
+
+
+
+<style>
+	.subMenu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: end;
+	}
+
+	.nombrePagina{
+		display: flex;
+		width: 15vw;
+		border: black solid 1px;
+		align-items: center;
+		justify-content: center;
+
+		
+	}
+
+	.nombrePagina p{
+		font-family: 'Times New Roman', Times, serif;
+		font-size: x-large;
+		text-shadow: 5px;
+
+		
+	}
+	.subMenu ul{
+		display: flex;
+		width: 75vw;
+
+
+		justify-content: space-around;
+		list-style-type: none;
+	}
+
+
+	main { 
+	display: grid;
+	grid-template-areas:
+				"titulo1 titulo1 titulo1"
+				"titulo2 titulo2 titulo3"
+				"seccion1 seccion1 parrafo1";
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+			}
+	
+	h1{ 
+		grid-area: titulo1;
+		border: black solid 1px;
+	}
+	h2{grid-area: titulo2;}
+	h3{grid-area: titulo3;}
+	section{grid-area: seccion1;}
+	p{grid-area: parrafo1;}
+
+</style>
+
+<script>
+
+</script>
