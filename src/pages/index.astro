@@ -1,16 +1,7 @@
----
-const saludo = "Proyecto de astroooo!!";
-const subMenu = ["Inicio", "Productos", "Servicios", "Nosotros", "Contacto"];
----
 
-<header>
-	<div class="nombrePagina"><p>Nombre de la web</p></div>
-	<div class="subMenu">
-		<ul>
-		{subMenu.map(menus => <a href="#"><li>{menus}</li></a>)}
-		</ul>
-	</div>
-</header>
+---
+import Layout from '../componentes/layout.astro'
+---
 
 <main>
 	<h1>{saludo}</h1>
@@ -83,5 +74,6 @@ const subMenu = ["Inicio", "Productos", "Servicios", "Nosotros", "Contacto"];
 </style>
 
 <script>
+	
 
 </script>

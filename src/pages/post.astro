@@ -1,0 +1,40 @@
+---
+const comments = await fetch("https://jsonplaceholder.typicode.com/posts")
+
+const data = await comments.json()
+
+---
+<h1><u>Mis post's</u></h1>
+
+
+{
+data.map(post =>(
+    <div class="comentarios">
+        <p class="title"><strong>{post.title}</strong></p>
+        <p class="cuerpo">{post.body}</p>
+        <p>Usuario: {post.userId}</p>
+        <p>Post numero: {post.id}</p>
+        
+    </div>
+))
+
+}
+
+
+<style>
+
+.comentarios{
+    border: 1px black solid;
+}
+
+div p{
+    margin-bottom: 10px; 
+}
+
+.title {
+    font-size: xx-large;
+    }
+
+
+    
+</style>

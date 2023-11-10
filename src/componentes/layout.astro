@@ -1,0 +1,28 @@
+---
+const saludo = "Proyecto de astroooo!!";
+const subMenu = [{name: "Inicio", link: "./index.html"}, {name:"Productos", link: "./productos/index.html"}, {name:"Nosotros", link: "./nosotros/index.html"}, {name: "post", link: "./post/index.html"}, {name: "Mis Servicios", link: "./misservicios/index.html"}];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="nombrePagina"><p>Nombre de la web</p></div>
+        <div class="subMenu">
+            <ul>
+            {subMenu.map(menus => <a href={menus.link}><li>{menus.name}</li></a>)}
+            </ul>
+        </div>
+    </header>
+    <main>
+        <slot/>
+    </main>
+
+    
+</body>
+</html>
