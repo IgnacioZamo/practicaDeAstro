@@ -3,38 +3,44 @@ const comments = await fetch("https://jsonplaceholder.typicode.com/posts")
 
 const data = await comments.json()
 
+import Layout from "../componentes/layout.astro"
+
 ---
-<h1><u>Mis post's</u></h1>
 
+<Layout>
 
-{
-data.map(post =>(
-    <div class="comentarios">
-        <p class="title"><strong>{post.title}</strong></p>
-        <p class="cuerpo">{post.body}</p>
-        <p>Usuario: {post.userId}</p>
-        <p>Post numero: {post.id}</p>
-        
-    </div>
-))
-
-}
-
-
-<style>
-
-.comentarios{
-    border: 1px black solid;
-}
-
-div p{
-    margin-bottom: 10px; 
-}
-
-.title {
-    font-size: xx-large;
-    }
-
-
+    <h1><u>Mis post's</u></h1>
     
-</style>
+    
+    {
+    data.map(post =>(
+        <div class="comentarios">
+            <p class="title"><strong>{post.title}</strong></p>
+            <p class="cuerpo">{post.body}</p>
+            <p>Usuario: {post.userId}</p>
+            <p>Post numero: {post.id}</p>
+            
+        </div>
+    ))
+    
+    }
+    
+    
+    <style>
+    
+    .comentarios{
+        border: 1px black solid;
+    }
+    
+    div p{
+        margin-bottom: 10px; 
+    }
+    
+    .title {
+        font-size: xx-large;
+        }
+    
+    
+        
+    </style>
+</Layout>
