@@ -2,10 +2,7 @@
 
 const subMenu = [{name: "Inicio", link: "../index.html"}, {name:"Productos", link: "../productos/index.html"}, {name:"Nosotros", link: "../nosotros/index.html"}, {name: "post", link: "../post/index.html"}, {name: "Mis Servicios", link: "../misservicios/index.html"}];
 
-const isLinkActive = (link) => {
-  return import.meta.env.PATH.endsWith(link);
-
-};
+const {pageTitle} = Astro.props;
 
 ---
 
@@ -14,14 +11,21 @@ const isLinkActive = (link) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Astro | {pageTitle}</title>
 </head>
 <body>
     <header>
         <div class="nombrePagina"><p>Nombre de la web</p></div>
         <div class="subMenu">
             <ul>
-            {subMenu.map(menus => (<a href={menus.link} class={isLinkActive(menus.link)? 'active': ''}><li>{menus.name}</li></a>))}
+            {subMenu.map((menus) => (
+				<li>
+					<a href={menus.link} >
+						{menus.name},
+						
+					</a>
+				</li>
+			))}
             </ul>
         </div>
     </header>
@@ -38,7 +42,7 @@ const isLinkActive = (link) => {
 		justify-content: end;
 	}
 
-    .subMenu a.active li {
+    .botonInicio {
         /* Estilos para el enlace activo */
         color: red; /* Puedes personalizar esto según tus necesidades */
         font-weight: bold;
