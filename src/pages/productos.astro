@@ -1,7 +1,83 @@
 ---
 import Layout from "../componentes/layout.astro"
+
+import foto1 from "../../src/componentes/imagenes/foto1.jpg";
+import foto2 from "../../src/componentes/imagenes/foto2.jpg";
+import foto3 from "../../src/componentes/imagenes/foto3.jpg";
 ---
 <Layout pageTitle="Productos">
     <h1>Nuestros productos</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fuga accusamus tempore tenetur rem numquam optio tempora, dolor velit repellat dolorem odit dicta autem amet! Minima, inventore impedit ut culpa cupiditate voluptate laudantium aspernatur similique qui.</p>
+    <br><br>
+    <h4>Primeras imagenes de prueba <u>usando links</u></h4>
+    <div class="contenedor-imageneslink">
+        <img class="imgLink" src="https://concepto.de/wp-content/uploads/2019/11/producto-packaging-e1572738514178.jpg" alt="">
+        <img class="imgLink" src="https://www.consumoteca.com/wp-content/uploads/Enjuague-bucal-Gabriel-Manlake-Unsplash.png" alt="">
+        <img class="imgLink" src="https://newsnetwork.mayoclinic.org/n7-mcnn/7bcc9724adf7b803/uploads/2016/03/kitchen-basket-of-cleaning-supplies-spray-bottles-chemicals-16x9.jpg" alt="">
+    </div>
+    <br><br>
+    <h4>Primeras imagenes de prueba <u>SUBIDAS DESDE EL LOCAL</u></h4>
+    <div class="contenedor-imagenesLocal">
+        <img class="imgLocal" src="../asado-jujuy-1jpg.webp" alt="">
+        <img class="imgLocal" src="../CertificadoDesarrolloWeb.png" alt="">
+        <img src="../usar-linkedin-para-encontrar-trabajo.jpg" alt="" class="imgLocal">
+    </div>
+    <br><br>
+
+    <h4>Primeras imagenes de prueba <u>SUBIDAS DESDE EL LOCAL - usando IMPORT</u></h4>
+    <div class="contenedor-imagenesLocalImport">
+        <img class="imgImport" src={foto1.src} alt="">
+        <img class="imgImport" src={foto2.src} alt="">
+        <img src={foto3.src} alt="" class="imgImport">
+    </div>
+
+
 </Layout>
+
+<style>
+    .contenedor-imageneslink{
+        display: flex;
+        padding: 15px;
+        gap: 10px;
+        justify-content: center ;
+    }
+    .imgLink{
+        height: 300px;
+        border: 3px solid green;
+        border-radius: 15%;
+        padding: 1px;
+    }
+
+    .contenedor-imagenesLocal{
+        display: flex;
+        padding: 15px;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .imgLocal{
+        height: 300px;
+        border: 3px solid rgb(117, 3, 3);
+        border-radius: 12%;
+        padding: 1px;
+        box-shadow: ;
+    }
+
+
+    .contenedor-imagenesLocalImport{
+        display: flex;
+        padding: 15px;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .imgImport{
+        height: 300px;
+        border: 3px solid rgb(3, 18, 117);
+        border-radius: 12%;
+        padding: 1px;
+        box-shadow: ;
+    }
+
+
+</style>
